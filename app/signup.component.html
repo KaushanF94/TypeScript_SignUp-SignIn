@@ -1,0 +1,23 @@
+<form role="form" #login="ngForm" (ngSubmit)="onSubmit(login.value)" name="login">
+    <fieldset>
+        <div class="form-group">
+            <input placeholder="E-mail" name="email" minlength="3"  maxlength="25" type="text" #email="ngModel" ngModel>
+            <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+                    Email Not Provided
+            </div>
+        </div>
+        <div class="form-group">
+            <input placeholder="UserName" name="username" minlength="3"  maxlength="10" type="text" ngModel>
+            <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger">username Error
+            </div>
+        </div>
+        <div class="form-group">
+            <input  placeholder="Password" name="password" type="password" value="" ngModel>
+            <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">password Error
+            </div>
+        </div>
+        <input type="submit" value="SignUp">
+    </fieldset>
+</form>
+
+
